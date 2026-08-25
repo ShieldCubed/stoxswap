@@ -3,7 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.stealthexWidget) {
-    const cleanup = window.stealthexWidget.init("YOUR_WIDGET_ID", {
+    const cleanup = window.stealthexWidget.init("9af4400f-05b5-446b-8345-0306d32995a9", {
       size: 380,
       containerId: "stealthex-widget-container"
     });
