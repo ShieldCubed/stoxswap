@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoxSwap Finance | Institutional & Wholesale Solutions</title>
+  <meta name="description" content="KYCed institutional solutions: OTC Desk, TradFi structured products, private placements, feeder funds, catastrophe bonds, and emergency stablecoin trade finance.">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #0a0a0a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: #0d1a0d;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-area img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.45));
+    }
+
+    .logo-text {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #22c55e;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #22c55e;
+    }
+
+    .hero {
+      padding: 90px 20px 70px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(34, 197, 94, 0.08) 0%, transparent 60%);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #22c55e;
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: #d1d5db;
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 16px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 999px;
+      color: #4ade80;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: #22c55e;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #111;
+      border: 1px solid rgba(34, 197, 94, 0.15);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(34, 197, 94, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      color: #4ade80;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+
+    .service-card .tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 60px 20px 80px;
+      background: linear-gradient(to bottom, transparent, rgba(34, 197, 94, 0.05));
+    }
+
+    .cta h2 {
+      font-size: 1.8rem;
+      color: #22c55e;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: #9ca3af;
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .contact-item {
+      background: #111;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      padding: 14px 22px;
+      min-width: 220px;
+      text-align: center;
+    }
+
+    .contact-item .label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-item a {
+      color: #4ade80;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .contact-item a:hover {
+      color: #22c55e;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #22c55e;
+      color: #0a0a0a;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .cta-button:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(34, 197, 94, 0.1);
+      color: #4b5563;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #22c55e;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 14px 20px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .contact-item {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="logo-area">
+      <img src="/logo.png" alt="StoxSwap" width="40" height="40">
+      <span class="logo-text">StoxSwap</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/">Exchange</a>
+      <a href="/finance">Finance</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Institutional Finance Desk</h1>
+    <p class="subtitle">
+      Wholesale & High-Net-Worth solutions for fully KYCed clients.<br>
+      Structured products, private placements, and deep capital markets access.
+    </p>
+    <div class="badge">KYC Required · Institutional & HNW Only</div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Core Solutions</h2>
+    <p class="section-desc">
+      Tailored for family offices, funds, trading desks and sophisticated private clients.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>OTC Desk & TradFi Structured Finance</h3>
+        <p>Custom structured notes, yield-enhanced products and cross-asset solutions combining traditional finance instruments with digital settlement rails.</p>
+        <span class="tag">Structured Products</span>
+      </div>
+
+      <div class="service-card">
+        <h3>Private Placement — Stocks, Warrants & Bonds</h3>
+        <p>Access to private placements of listed and pre-IPO equities, warrants and corporate bonds through regulated channels for qualified investors.</p>
+        <span class="tag">Private Markets</span>
+      </div>
+
+      <div class="service-card">
+        <h3>Feeder Funds & Catastrophe Bonds</h3>
+        <p>Deep capital formation vehicles including feeder fund structures and catastrophe (Cat) bonds for portfolio diversification and alternative yield.</p>
+        <span class="tag">Alternative Capital</span>
+      </div>
+
+      <div class="service-card">
+        <h3>Emergency Trade & Commodities Finance</h3>
+        <p>Stablecoin-denominated trade and commodities financing processed in 2–3 business days for time-sensitive institutional requirements.</p>
+        <span class="tag">2–3 Business Days</span>
+      </div>
+
+      <div class="service-card">
+        <h3>Freshly-Mined PoW Treasury Access</h3>
+        <p>Direct access to virgin, freshly-mined Proof-of-Work tokens (BTC, DOGE, BCH, ZEC) for KYCed treasury and compliance-sensitive holdings.</p>
+        <span class="tag">Treasury Grade</span>
+      </div>
+
+      <div class="service-card">
+        <h3>24×7 OTC Trading Desk</h3>
+        <p>Round-the-clock OTC execution for the top 20 CMC-listed tokens and major stablecoins with institutional size and minimal market impact.</p>
+        <span class="tag">Wholesale Liquidity</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to discuss your requirements?</h2>
+    <p>All services are available exclusively to fully verified institutional and high-net-worth clients.</p>
+
+    <div class="contact-channels">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <a href="mailto:team@spacenet.network">team@spacenet.network</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">X (Twitter)</div>
+        <a href="https://x.com/hypershares" target="_blank" rel="noopener">@hypershares</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Telegram</div>
+        <a href="https://t.me/stoxswap" target="_blank" rel="noopener">@stoxswap</a>
+      </div>
+    </div>
+
+    <a href="mailto:team@spacenet.network" class="cta-button">Contact Finance Desk</a>
+  </section>
+
+  <footer>
+    <p>
+      <a href="/">StoxSwap</a> · Institutional Finance Desk · 
+      Email: <a href="mailto:team@spacenet.network">team@spacenet.network</a> · 
+      X: <a href="https://x.com/hypershares" target="_blank">@hypershares</a> · 
+      Telegram: <a href="https://t.me/stoxswap" target="_blank">@stoxswap</a>
+    </p>
+  </footer>
+
+</body>
+</html>
