@@ -17,20 +17,14 @@
       background: #0a0a0a;
       color: #fff;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* Header / Navbar */
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 16px 40px;
       background: #0d1a0d;
       border-bottom: 1px solid rgba(0, 255, 100, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     .logo-area {
@@ -50,216 +44,43 @@
     .logo-text {
       font-size: 1.5rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .logo-text .stox {
       color: #22c55e;
     }
 
-    .logo-text .swap {
-      color: #22c55e;
-    }
-
-    /* Hero Section */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 80px 20px 40px;
+      padding: 60px 20px 40px;
       text-align: center;
-      position: relative;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 700;
       color: #22c55e;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       text-shadow: 0 0 40px rgba(34, 197, 94, 0.3);
     }
 
     .hero .tagline {
       color: #9ca3af;
       font-size: 1.05rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
-    .hero .tagline span {
-      margin: 0 6px;
-    }
-
-    /* Exchange Card */
-    .exchange-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 28px 24px;
+    .widget-wrapper {
       width: 100%;
-      max-width: 420px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
-                  0 0 0 1px rgba(255, 255, 255, 0.05);
-      color: #111;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
-    .exchange-card h2 {
-      text-align: center;
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      color: #111;
-    }
-
-    .input-group {
-      background: #f3f4f6;
-      border-radius: 12px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      border: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .input-group:focus-within {
-      border-color: #22c55e;
-    }
-
-    .input-group label {
-      font-size: 0.75rem;
-      color: #6b7280;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .input-left {
-      flex: 1;
-    }
-
-    .input-left input {
-      background: transparent;
-      border: none;
-      outline: none;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #111;
-      width: 100%;
-    }
-
-    .token-select {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border-radius: 999px;
-      padding: 6px 12px 6px 8px;
-      border: 1px solid #e5e7eb;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .token-select img,
-    .token-icon {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-    }
-
-    .token-icon.btc {
-      background: #f7931a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .token-icon.eth {
-      background: #627eea;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .swap-arrow {
-      display: flex;
-      justify-content: center;
-      margin: 12px 0;
-    }
-
-    .swap-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      border: 1px dashed #d1d5db;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .swap-btn:hover {
-      border-color: #22c55e;
-      background: #f0fdf4;
-    }
-
-    .receive-group {
-      position: relative;
-    }
-
-    .receive-group .lock {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #9ca3af;
-      font-size: 14px;
-    }
-
-    .receive-group .input-left {
-      padding-left: 28px;
-    }
-
-    .start-btn {
-      width: 100%;
-      margin-top: 20px;
-      padding: 16px;
-      background: #facc15;
-      border: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    .start-btn:hover {
-      background: #eab308;
-    }
-
-    .start-btn:active {
-      transform: scale(0.98);
-    }
-
-    /* Footer note */
     .footer-note {
-      margin-top: 40px;
+      margin-top: 30px;
       color: #4b5563;
       font-size: 0.85rem;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       header {
         padding: 14px 20px;
@@ -267,149 +88,36 @@
       .hero h1 {
         font-size: 1.9rem;
       }
-      .exchange-card {
-        max-width: 100%;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Logo -->
+
   <header>
     <a href="/" class="logo-area">
       <img src="logo.png" alt="StoxSwap Logo" width="42" height="42">
-      <span class="logo-text">
-        <span class="stox">Stox</span><span class="swap">Swap</span>
-      </span>
+      <span class="logo-text">StoxSwap</span>
     </a>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <h1>Instant Cross-Chain Crypto Swaps</h1>
     <p class="tagline">
       No account • No KYC • Non-custodial • 2000+ assets
     </p>
 
-    <!-- Exchange Widget -->
-    <div class="exchange-card">
-      <h2>Exchange Crypto</h2>
-
-      <!-- Send -->
-      <div class="input-group">
-        <div class="input-left">
-          <label>Send Bitcoin</label>
-          <input type="text" value="0.1" id="sendAmount">
-        </div>
-        <div class="token-select">
-          <div class="token-icon btc">₿</div>
-          <span>BTC</span>
-          <span style="font-size:10px;color:#9ca3af">▼</span>
-        </div>
-      </div>
-
-      <!-- Swap Arrow -->
-      <div class="swap-arrow">
-        <button class="swap-btn" title="Swap direction">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
-            <path d="M7 16V4M7 4L3 8M7 4L11 8"/>
-            <path d="M17 8V20M17 20L21 16M17 20L13 16"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Receive -->
-      <div class="input-group receive-group">
-        <span class="lock">🔒</span>
-        <div class="input-left">
-          <label>Get Ethereum</label>
-          <input type="text" value="≈3.1722076" id="receiveAmount" readonly>
-        </div>
-        <div class="token-select">
-          <div class="token-icon eth">Ξ</div>
-          <span>ETH</span>
-          <span style="font-size:10px;color:#9ca3af">▼</span>
-        </div>
-      </div>
-
-      <button class="start-btn" id="startExchangeBtn">START EXCHANGE</button>
+    <!-- Official StealthEX Widget -->
+    <div class="widget-wrapper">
+      <iframe 
+        id="stealthex-widget" 
+        src="https://stealthex.io/widget/9af4400f-05b5-446b-8345-0306d32995a9" 
+        style="border: none; border-radius: 16px; overflow: hidden; width: 100%; max-width: 480px; height: 430px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);"
+        allow="clipboard-write">
+      </iframe>
     </div>
 
     <p class="footer-note">Non-custodial • No registration required</p>
   </section>
 
-  <!-- Simple modal for demo -->
-  <div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:999; align-items:center; justify-content:center;">
-    <div style="background:#fff; color:#111; border-radius:16px; padding:32px; max-width:380px; text-align:center; margin:20px;">
-      <h3 style="margin-bottom:12px; font-size:1.3rem;">Exchange Started</h3>
-      <p id="modalMsg" style="color:#555; margin-bottom:24px; line-height:1.5;"></p>
-      <button id="closeModal" style="background:#22c55e; color:#fff; border:none; padding:12px 28px; border-radius:10px; font-weight:600; cursor:pointer;">OK</button>
-    </div>
-  </div>
-
-  <script>
-    // Demo interactivity
-    const sendInput = document.getElementById('sendAmount');
-    const receiveInput = document.getElementById('receiveAmount');
-    const startBtn = document.getElementById('startExchangeBtn');
-    const swapBtn = document.querySelector('.swap-btn');
-    const modal = document.getElementById('modal');
-    const modalMsg = document.getElementById('modalMsg');
-    const closeModal = document.getElementById('closeModal');
-
-    // Approximate rate for demo (BTC -> ETH)
-    let rate = 31.722076;
-    let isBtcToEth = true;
-
-    sendInput.addEventListener('input', () => {
-      const val = parseFloat(sendInput.value) || 0;
-      receiveInput.value = '≈' + (val * rate).toFixed(7);
-    });
-
-    // START EXCHANGE button
-    startBtn.addEventListener('click', () => {
-      const amount = sendInput.value || '0';
-      const from = isBtcToEth ? 'BTC' : 'ETH';
-      const to = isBtcToEth ? 'ETH' : 'BTC';
-      modalMsg.textContent = `You are swapping ${amount} ${from} → ${receiveInput.value} ${to}.\n\nThis is a demo. In production this would connect to the swap engine.`;
-      modal.style.display = 'flex';
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-
-    // Swap direction button
-    swapBtn.addEventListener('click', () => {
-      isBtcToEth = !isBtcToEth;
-      const sendLabel = document.querySelector('.input-group label');
-      const receiveLabel = document.querySelector('.receive-group label');
-      const sendToken = document.querySelectorAll('.token-select')[0];
-      const receiveToken = document.querySelectorAll('.token-select')[1];
-
-      if (isBtcToEth) {
-        sendLabel.textContent = 'Send Bitcoin';
-        receiveLabel.textContent = 'Get Ethereum';
-        sendToken.innerHTML = '<div class="token-icon btc">₿</div><span>BTC</span><span style="font-size:10px;color:#9ca3af">▼</span>';
-        receiveToken.innerHTML = '<div class="token-icon eth">Ξ</div><span>ETH</span><span style="font-size:10px;color:#9ca3af">▼</span>';
-        rate = 31.722076;
-      } else {
-        sendLabel.textContent = 'Send Ethereum';
-        receiveLabel.textContent = 'Get Bitcoin';
-        sendToken.innerHTML = '<div class="token-icon eth">Ξ</div><span>ETH</span><span style="font-size:10px;color:#9ca3af">▼</span>';
-        receiveToken.innerHTML = '<div class="token-icon btc">₿</div><span>BTC</span><span style="font-size:10px;color:#9ca3af">▼</span>';
-        rate = 1 / 31.722076;
-      }
-
-      // Recalculate
-      const val = parseFloat(sendInput.value) || 0;
-      receiveInput.value = '≈' + (val * rate).toFixed(7);
-    });
-  </script>
 </body>
 </html>
-
