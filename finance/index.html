@@ -7,11 +7,7 @@
   <meta name="description" content="KYCed institutional solutions: OTC Desk, TradFi structured products, private placements, feeder funds, catastrophe bonds, and emergency stablecoin trade finance.">
   <link rel="icon" type="image/png" href="/logo.png">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -60,9 +56,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: #22c55e;
-    }
+    .nav-links a:hover { color: #22c55e; }
 
     .hero {
       padding: 90px 20px 70px;
@@ -169,28 +163,84 @@
       margin-bottom: 16px;
     }
 
-    .cta p {
+    .cta > p {
       color: #9ca3af;
       max-width: 520px;
       margin: 0 auto 32px;
     }
 
-    .contact-form-wrap {
-      max-width: 720px;
+    .native-form {
+      max-width: 560px;
       margin: 0 auto;
-      background: #111;
-      border: 1px solid rgba(34, 197, 94, 0.18);
-      border-radius: 16px;
-      overflow: hidden;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .contact-form-wrap iframe {
-      display: block;
+    .native-form input,
+    .native-form select,
+    .native-form textarea {
       width: 100%;
-      height: 820px;
-      border: 0;
-      background: #fff;
+      background: rgba(6, 16, 10, 0.85);
+      border: 1px solid rgba(34, 197, 94, 0.22);
+      border-radius: 12px;
+      color: #e5e7eb;
+      font: inherit;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
+
+    .native-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .native-form input::placeholder,
+    .native-form textarea::placeholder {
+      color: #6b7280;
+    }
+
+    .native-form input:focus,
+    .native-form select:focus,
+    .native-form textarea:focus {
+      border-color: rgba(34, 197, 94, 0.55);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+    }
+
+    .native-form select {
+      appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #4ade80 50%), linear-gradient(135deg, #4ade80 50%, transparent 50%);
+      background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+
+    .native-form button {
+      width: 100%;
+      margin-top: 6px;
+      border: 0;
+      border-radius: 12px;
+      background: #22c55e;
+      color: #052e16;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 16px;
+      cursor: pointer;
+    }
+
+    .native-form button:hover { background: #4ade80; }
+    .native-form button:disabled { opacity: 0.7; cursor: default; }
+
+    .form-note, .form-status {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-top: 12px;
+    }
+
+    .form-status.ok { color: #4ade80; }
 
     footer {
       text-align: center;
@@ -200,24 +250,12 @@
       font-size: 0.85rem;
     }
 
-    footer a {
-      color: #22c55e;
-      text-decoration: none;
-    }
+    footer a { color: #22c55e; text-decoration: none; }
 
     @media (max-width: 700px) {
-      header {
-        padding: 14px 20px;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .nav-links {
-        display: none;
-      }
-      .contact-form-wrap iframe {
-        height: 980px;
-      }
+      header { padding: 14px 20px; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -288,16 +326,31 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta" id="contact">
     <h2>Ready to discuss your requirements?</h2>
     <p>All services are available exclusively to fully verified institutional and high-net-worth clients.</p>
 
-    <div class="contact-form-wrap">
-      <iframe
-        title="Contact StoxSwap Finance Desk"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc3C_pkiNtrxZGfVA9RT6w7eYwVqE4EasCv_1QyaO34-mBrlQ/viewform?embedded=true"
-        loading="lazy">Loading…</iframe>
-    </div>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="hidden"></iframe>
+    <form
+      class="native-form"
+      id="contact-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSc3C_pkiNtrxZGfVA9RT6w7eYwVqE4EasCv_1QyaO34-mBrlQ/formResponse"
+      method="POST"
+      target="hidden_iframe">
+      <input type="text" name="entry.970369384" placeholder="Name" required autocomplete="name">
+      <input type="text" name="entry.1084907377" placeholder="Email and/or Telegram username" required autocomplete="email">
+      <select name="entry.726808088" required>
+        <option>Finance desk / OTC / institutional</option>
+        <option>Swap/Order support</option>
+        <option>Rates, limits, or a pair request</option>
+        <option>Partnership or listing</option>
+        <option>Other</option>
+      </select>
+      <textarea name="entry.202201817" placeholder="What should we prepare for the desk?" required></textarea>
+      <button type="submit" id="contact-submit">Send</button>
+    </form>
+    <p class="form-note">Nothing in this form is used for marketing lists.</p>
+    <p class="form-status" id="form-status" hidden></p>
   </section>
 
   <footer>
@@ -306,6 +359,34 @@
       Telegram (backup): <a href="https://t.me/stoxswap" target="_blank" rel="noopener">@stoxswap</a>
     </p>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      var btn = document.getElementById('contact-submit');
+      var pending = false;
+
+      form.addEventListener('submit', function () {
+        pending = true;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        status.hidden = true;
+      });
+
+      document.getElementById('hidden_iframe').addEventListener('load', function () {
+        if (!pending) return;
+        pending = false;
+        form.reset();
+        form.querySelector('select').value = 'Finance desk / OTC / institutional';
+        btn.disabled = false;
+        btn.textContent = 'Send';
+        status.hidden = false;
+        status.className = 'form-status ok';
+        status.textContent = 'Sent. The desk will follow up shortly.';
+      });
+    })();
+  </script>
 
 </body>
 </html>
