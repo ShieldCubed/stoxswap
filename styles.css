@@ -17,11 +17,13 @@ header {
   display: flex; justify-content: space-between; align-items: center;
   padding: 8px 0 28px;
 }
-.logo { display: flex; gap: 10px; align-items: center; color: var(--text); font-weight: 700; letter-spacing: .04em; }
-.logo img, .brand-logo {
+.logo { display: flex; gap: 10px; align-items: center; color: var(--text); font-weight: 700; letter-spacing: .02em; font-size: 18px; }
+.brand-logo {
   height: 40px;
-  width: auto;
+  width: 40px;
+  object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 .mark { display: none; }
 nav { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
