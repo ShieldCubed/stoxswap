@@ -15,6 +15,7 @@
       <label>Admin token</label>
       <input id="token" type="password" />
       <button class="btn" id="load" type="button" style="margin-top:12px">Load orders</button>
+      <p class="notice" id="msg"></p>
     </div>
     <div class="card" style="margin-top:16px; overflow:auto">
       <table>
@@ -27,12 +28,19 @@
   </div>
   <script>
     const statuses = ["awaiting_deposit","deposit_seen","settling","payout_sent","completed","refunded","cancelled"];
-    document.getElementById("load").onclick = async () => {
-      const token = document.getElementById("token").value;
-      const res = await fetch("/api/admin", { headers: { "x-admin-token": token } });
-      const data = await res.json();
-      if (!res.ok) { alert(data.error); return; }
-      document.getElementById("rows").innerHTML = data.orders.map(o => `
+
+    function localOrders() {
+      const out = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k || !k.startsWith("stox_order_")) continue;
+        try { out.push(JSON.parse(localStorage.getItem(k))); } catch {}
+      }
+      return out;
+    }
+
+    function render(list) {
+      document.getElementById("rows").innerHTML = list.map(o => `
         <tr>
           <td>${o.id}</td>
           <td>${o.from}→${o.to}</td>
@@ -44,8 +52,32 @@
             </select>
           </td>
         </tr>`).join("");
+    }
+
+    document.getElementById("load").onclick = async () => {
+      const token = document.getElementById("token").value;
+      const msg = document.getElementById("msg");
+      msg.textContent = "Loading…";
+      let server = [];
+      try {
+        const res = await fetch("/api/admin", { headers: { "x-admin-token": token } });
+        const data = await res.json();
+        if (!res.ok) { msg.textContent = data.error || "Unauthorized"; return; }
+        server = data.orders || [];
+      } catch (e) {
+        msg.textContent = "Admin API error: " + e.message;
+        render(localOrders());
+        return;
+      }
+      const local = localOrders();
+      const map = new Map();
+      [...server, ...local].forEach((o) => { if (o && o.id) map.set(o.id, o); });
+      const list = [...map.values()].sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
+      render(list);
+      msg.textContent = `Server ${server.length} · this browser ${local.length} · shown ${list.length}. Server list resets on each deploy (Hobby has no database).`;
       window._tok = token;
     };
+
     async function upd(id, status) {
       await fetch("/api/admin", {
         method: "POST",
