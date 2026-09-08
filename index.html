@@ -1,290 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StoxSwap - Instant Cross-Chain Crypto Swaps</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 40px;
-      background: #0d1a0d;
-      border-bottom: 1px solid rgba(0, 255, 100, 0.08);
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .logo-area img {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(0, 255, 100, 0.5));
-    }
-
-    .logo-text {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #22c55e;
-    }
-
-    .nav-links a {
-      color: #9ca3af;
-      text-decoration: none;
-      margin-left: 28px;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover { color: #22c55e; }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px 40px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: #22c55e;
-      margin-bottom: 14px;
-      text-shadow: 0 0 40px rgba(34, 197, 94, 0.3);
-    }
-
-    .hero .tagline {
-      color: #9ca3af;
-      font-size: 1.05rem;
-      margin-bottom: 40px;
-    }
-
-    .widget-wrapper {
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    .footer-note {
-      margin-top: 30px;
-      color: #4b5563;
-      font-size: 0.85rem;
-    }
-
-    .contact {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 56px 20px 20px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      color: #22c55e;
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-    }
-
-    .contact > p {
-      color: #9ca3af;
-      font-size: 0.95rem;
-      margin-bottom: 28px;
-    }
-
-    .contact > p a { color: #4ade80; }
-
-    .native-form {
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .native-form input,
-    .native-form select,
-    .native-form textarea {
-      width: 100%;
-      background: rgba(6, 16, 10, 0.85);
-      border: 1px solid rgba(34, 197, 94, 0.22);
-      border-radius: 12px;
-      color: #e5e7eb;
-      font: inherit;
-      padding: 14px 16px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .native-form textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .native-form input::placeholder,
-    .native-form textarea::placeholder {
-      color: #6b7280;
-    }
-
-    .native-form input:focus,
-    .native-form select:focus,
-    .native-form textarea:focus {
-      border-color: rgba(34, 197, 94, 0.55);
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
-    }
-
-    .native-form select {
-      appearance: none;
-      background-image: linear-gradient(45deg, transparent 50%, #4ade80 50%), linear-gradient(135deg, #4ade80 50%, transparent 50%);
-      background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
-      background-size: 5px 5px, 5px 5px;
-      background-repeat: no-repeat;
-    }
-
-    .native-form button {
-      width: 100%;
-      margin-top: 6px;
-      border: 0;
-      border-radius: 12px;
-      background: #22c55e;
-      color: #052e16;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 16px;
-      cursor: pointer;
-    }
-
-    .native-form button:hover { background: #4ade80; }
-    .native-form button:disabled { opacity: 0.7; cursor: default; }
-
-    .form-note, .form-status {
-      text-align: center;
-      font-size: 0.82rem;
-      color: #6b7280;
-      margin-top: 10px;
-    }
-
-    .form-status.ok { color: #4ade80; }
-    .form-status.err { color: #f87171; }
-
-    footer {
-      text-align: center;
-      padding: 28px 20px 40px;
-      color: #4b5563;
-      font-size: 0.85rem;
-    }
-
-    footer a { color: #22c55e; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      header { padding: 14px 20px; }
-      .hero h1 { font-size: 1.9rem; }
-      .nav-links { display: none; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stoxswap — Cross-chain swap desk</title>
+  <meta name="description" content="Swap XMR, ETH, TRX, BTC, USDT and USDC. Orders processed by the Stoxswap desk." />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-
-  <header>
-    <a href="/" class="logo-area">
-      <img src="logo.png" alt="StoxSwap Logo" width="42" height="42">
-      <span class="logo-text">StoxSwap</span>
-    </a>
-    <nav class="nav-links">
-      <a href="/">Exchange</a>
-      <a href="/finance">Finance</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Instant Cross-Chain Crypto Swaps</h1>
-    <p class="tagline">No account • No KYC • Non-custodial • 2000+ assets</p>
-
-    <div class="widget-wrapper">
-      <iframe
-        id="stealthex-widget"
-        src="https://stealthex.io/widget/9af4400f-05b5-446b-8345-0306d32995a9"
-        style="border: none; border-radius: 16px; overflow: hidden; width: 100%; max-width: 480px; height: 430px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);"
-        allow="clipboard-write">
-      </iframe>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="/"><span class="mark"></span> STOXSWAP</a>
+      <nav>
+        <a href="/">Exchange</a>
+        <a href="/track.html">Track</a>
+        <a href="/how.html">How it works</a>
+        <a href="https://t.me/stoxswap" target="_blank" rel="noopener">Telegram</a>
+      </nav>
+    </header>
+    <p class="pills">
+      <span class="pill">Hosted desk</span>
+      <span class="pill">No StealthEX</span>
+      <span class="pill">XMR · ETH · TRX · BTC · USDT · USDC</span>
+      <span class="pill">0.5% desk fee</span>
+    </p>
+    <h1>Swap cross-chain.<br />Stay on stoxswap.com.</h1>
+    <p class="sub">You send to a Stoxswap deposit address. We settle and pay your wallet. This is a desk, not an atomic swap and not a widget on someone else’s site.</p>
+    <div class="card">
+      <div class="row">
+        <div>
+          <label>You send</label>
+          <select id="from"></select>
+          <input id="amount" value="1" inputmode="decimal" />
+        </div>
+        <button class="flip" id="flip" type="button">⇅</button>
+        <div>
+          <label>You receive (estimate)</label>
+          <select id="to"></select>
+          <input id="receive" readonly />
+        </div>
+      </div>
+      <label>Destination address (where we pay you)</label>
+      <input id="destination" placeholder="Your receiving wallet" />
+      <label>Refund address (same asset you send)</label>
+      <input id="refund" placeholder="Refund if the order cannot be completed" />
+      <div class="meta">
+        <span id="fee">Fee 0.5%</span>
+        <span>15–60 min after confirmations</span>
+        <span>Temporary custody during settlement</span>
+      </div>
+      <button class="btn" id="create" type="button">Create order</button>
+      <p class="notice" id="err"></p>
     </div>
-
-    <p class="footer-note">Non-custodial • No registration required</p>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Tell us what you need. For a faster reply you can also message us on <a href="https://t.me/stoxswap" target="_blank" rel="noopener">Telegram</a>.</p>
-
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="hidden"></iframe>
-    <form
-      class="native-form"
-      id="contact-form"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSc3C_pkiNtrxZGfVA9RT6w7eYwVqE4EasCv_1QyaO34-mBrlQ/formResponse"
-      method="POST"
-      target="hidden_iframe">
-      <input type="text" name="entry.970369384" placeholder="Name" required autocomplete="name">
-      <input type="text" name="entry.1084907377" placeholder="Email and/or Telegram username" required autocomplete="email">
-      <select name="entry.726808088" required>
-        <option value="" disabled selected>What is this about?</option>
-        <option>Swap/Order support</option>
-        <option>Rates, limits, or a pair request</option>
-        <option>Finance desk / OTC / institutional</option>
-        <option>Partnership or listing</option>
-        <option>Other</option>
-      </select>
-      <textarea name="entry.202201817" placeholder="Message" required></textarea>
-      <button type="submit" id="contact-submit">Send</button>
-    </form>
-    <p class="form-note">Same inbox as before — only the chrome changed.</p>
-    <p class="form-status" id="form-status" hidden></p>
-  </section>
-
-  <footer>
-    Telegram (backup): <a href="https://t.me/stoxswap" target="_blank" rel="noopener">@stoxswap</a>
-  </footer>
-
-  <script>
-    (function () {
-      var form = document.getElementById('contact-form');
-      var status = document.getElementById('form-status');
-      var btn = document.getElementById('contact-submit');
-      var pending = false;
-
-      form.addEventListener('submit', function () {
-        pending = true;
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-        status.hidden = true;
-      });
-
-      document.getElementById('hidden_iframe').addEventListener('load', function () {
-        if (!pending) return;
-        pending = false;
-        form.reset();
-        btn.disabled = false;
-        btn.textContent = 'Send';
-        status.hidden = false;
-        status.className = 'form-status ok';
-        status.textContent = 'Sent. We will get back to you shortly.';
-      });
-    })();
-  </script>
-
+    <div class="card hidden" id="result" style="margin-top:16px">
+      <div class="status" id="oid"></div>
+      <p>Send exactly the quoted amount to this deposit address:</p>
+      <div class="addr" id="dep"></div>
+      <p class="notice" id="sum"></p>
+      <a class="btn ghost" id="tracklink" href="#">Track this order</a>
+    </div>
+    <footer>
+      Stoxswap is a hosted exchange desk. While your deposit sits in our hot wallet we have custody of those coins.
+      Site: stoxswap.com
+    </footer>
+  </div>
+  <script src="/app.js"></script>
 </body>
 </html>
