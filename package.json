@@ -1,0 +1,6 @@
+{
+  "name": "stoxswap",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stoxswap hosted swap desk for stoxswap.com"
+}
