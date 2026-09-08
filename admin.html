@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desk ops — Stoxswap</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="/"><span class="mark"></span> STOXSWAP OPS</a>
+    </header>
+    <div class="card">
+      <label>Admin token</label>
+      <input id="token" type="password" />
+      <button class="btn" id="load" type="button" style="margin-top:12px">Load orders</button>
+    </div>
+    <div class="card" style="margin-top:16px; overflow:auto">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Pair</th><th>Send</th><th>Status</th><th>Update</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    const statuses = ["awaiting_deposit","deposit_seen","settling","payout_sent","completed","refunded","cancelled"];
+    document.getElementById("load").onclick = async () => {
+      const token = document.getElementById("token").value;
+      const res = await fetch("/api/admin", { headers: { "x-admin-token": token } });
+      const data = await res.json();
+      if (!res.ok) { alert(data.error); return; }
+      document.getElementById("rows").innerHTML = data.orders.map(o => `
+        <tr>
+          <td>${o.id}</td>
+          <td>${o.from}→${o.to}</td>
+          <td>${o.send}</td>
+          <td>${o.status}</td>
+          <td>
+            <select onchange="upd('${o.id}', this.value)">
+              ${statuses.map(s => `<option ${s===o.status?"selected":""}>${s}</option>`).join("")}
+            </select>
+          </td>
+        </tr>`).join("");
+      window._tok = token;
+    };
+    async function upd(id, status) {
+      await fetch("/api/admin", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-admin-token": window._tok },
+        body: JSON.stringify({ id, status })
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track order — Stoxswap</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="/"><span class="mark"></span> STOXSWAP</a>
+      <nav>
+        <a href="/">Exchange</a>
+        <a href="/track.html">Track</a>
+        <a href="/how.html">How it works</a>
+      </nav>
+    </header>
+    <h1>Track order</h1>
+    <div class="card">
+      <label>Order ID</label>
+      <input id="id" placeholder="STX-…" />
+      <button class="btn" id="go" type="button" style="margin-top:14px">Lookup</button>
+      <div id="out" class="notice"></div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (params.get("id")) document.getElementById("id").value = params.get("id");
+    async function lookup() {
+      const id = document.getElementById("id").value.trim();
+      const out = document.getElementById("out");
+      const res = await fetch("/api/orders?id=" + encodeURIComponent(id));
+      const data = await res.json();
+      if (!res.ok) {
+        const cached = localStorage.getItem("stox_order_" + id);
+        if (cached) {
+          const o = JSON.parse(cached);
+          out.innerHTML = `<p class="status">${o.status}</p><p>Cached receipt.</p><div class="addr">${o.depositAddress}</div>`;
+          return;
+        }
+        out.textContent = data.error;
+        return;
+      }
+      out.innerHTML = `
+        <p class="status">${data.status}</p>
+        <p>${data.send} ${data.from} → ${data.receive} ${data.to}</p>
+        <p>Deposit</p>
+        <div class="addr">${data.depositAddress}</div>
+        <p>Destination</p>
+        <div class="addr">${data.destination}</div>
+        ${data.payoutTx ? `<p>Payout tx: ${data.payoutTx}</p>` : ""}
+      `;
+    }
+    document.getElementById("go").onclick = lookup;
+    if (params.get("id")) lookup();
+  </script>
+</body>
+</html>
