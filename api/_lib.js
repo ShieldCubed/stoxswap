@@ -20,17 +20,17 @@ const RATES_USD = {
 };
 
 const DEPOSITS = {
-  xmr: process.env.DEPOSIT_XMR || "4ReplaceMeWithYourXmrHotWallet",
+  xmr: process.env.DEPOSIT_XMR || "8AqeLPshgru5LoGA3jyXudaVyL48umJuwELigxSntaSUZLZ1ByyeUHJeh4fE9x6F8h1jknoe9y7VvXEg1GAzfK8jDHHzYJU",
   btc: process.env.DEPOSIT_BTC || "bc1qyv3edl7tg2eys84yvqk8tzhckaarm8kgyrgk3e",
-  eth: process.env.DEPOSIT_ETH || "0xReplaceMeWithYourEthHotWallet",
-  trx: process.env.DEPOSIT_TRX || "TReplaceMeWithYourTrxHotWallet",
-  zec: process.env.DEPOSIT_ZEC || "t1ReplaceMeWithYourZecTransparentAddress",
-  sol: process.env.DEPOSIT_SOL || "ReplaceMeWithYourSolanaAddress",
-  xrp: process.env.DEPOSIT_XRP || "rReplaceMeWithYourXrpAddress",
-  usdt_eth: process.env.DEPOSIT_ETH || "0xReplaceMeWithYourEthHotWallet",
-  usdc_eth: process.env.DEPOSIT_ETH || "0xReplaceMeWithYourEthHotWallet",
-  usdt_trx: process.env.DEPOSIT_TRX || "TReplaceMeWithYourTrxHotWallet",
-  usdc_trx: process.env.DEPOSIT_TRX || "TReplaceMeWithYourTrxHotWallet"
+  eth: process.env.DEPOSIT_ETH || "0xF6B7717E1B794bd39B1C09c6D1E471F3DF4464A3",
+  trx: process.env.DEPOSIT_TRX || "TCANH6rmQhkVPCcKAzjJ3GwmBa2oBcywRx",
+  zec: process.env.DEPOSIT_ZEC || "t1Zd518kdsEDia6QnupAgsgjw2KMHaJmFEp",
+  sol: process.env.DEPOSIT_SOL || "JbfSHvR412J1diYurNkAGmsQAqqzqgJL5UsckhKB4YE",
+  xrp: process.env.DEPOSIT_XRP || "rwJYcpBAKGa79RMUNgeGhjTu6ZTwemTdAr",
+  usdt_eth: process.env.DEPOSIT_ETH || "0xF6B7717E1B794bd39B1C09c6D1E471F3DF4464A3",
+  usdc_eth: process.env.DEPOSIT_ETH || "0xF6B7717E1B794bd39B1C09c6D1E471F3DF4464A3",
+  usdt_trx: process.env.DEPOSIT_TRX || "TCANH6rmQhkVPCcKAzjJ3GwmBa2oBcywRx",
+  usdc_trx: process.env.DEPOSIT_TRX || "TCANH6rmQhkVPCcKAzjJ3GwmBa2oBcywRx"
 };
 
 function quote(from, to, amount) {
