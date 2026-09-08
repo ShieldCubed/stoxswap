@@ -2,6 +2,13 @@
 
 Hosted swap desk for https://stoxswap.com
 
-Users send to Stoxswap deposit addresses. Ops settles and pays out. No StealthEX widget.
+Assets: XMR, BTC, ETH, TRX, ZEC, SOL, USDT, USDC.
 
-Set Vercel env: STOX_ADMIN_TOKEN, DEPOSIT_XMR, DEPOSIT_BTC, DEPOSIT_ETH, DEPOSIT_TRX.
+Vercel env:
+STOX_ADMIN_TOKEN
+DEPOSIT_XMR
+DEPOSIT_BTC
+DEPOSIT_ETH
+DEPOSIT_TRX
+DEPOSIT_ZEC
+DEPOSIT_SOL
