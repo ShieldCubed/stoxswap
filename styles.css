@@ -4,7 +4,7 @@
   --line: #243044;
   --text: #eef3f9;
   --muted: #8b9bb0;
-  --accent: #f5d547;
+  --accent: #00e676;
   --green: #34d399;
   --radius: 18px;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
@@ -17,8 +17,13 @@ header {
   display: flex; justify-content: space-between; align-items: center;
   padding: 8px 0 28px;
 }
-.logo { display: flex; gap: 10px; align-items: center; color: var(--text); font-weight: 700; letter-spacing: .08em; }
-.mark { width: 32px; height: 32px; border-radius: 9px; background: radial-gradient(circle at 30% 30%, #ffe680, #c9a227); }
+.logo { display: flex; gap: 10px; align-items: center; color: var(--text); font-weight: 700; letter-spacing: .04em; }
+.logo img, .brand-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+.mark { display: none; }
 nav { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
 nav a { color: var(--muted); }
 h1 { font-size: 42px; margin: 10px 0 8px; letter-spacing: -0.03em; }
@@ -39,7 +44,7 @@ select, input {
 .meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 13px; margin: 14px 0; gap: 12px; flex-wrap: wrap; }
 .btn {
   width: 100%; border: 0; border-radius: 12px; padding: 14px;
-  background: var(--accent); color: #111; font-weight: 700; cursor: pointer;
+  background: var(--accent); color: #04120a; font-weight: 700; cursor: pointer;
 }
 .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
 .notice { margin-top: 14px; color: var(--muted); font-size: 13px; line-height: 1.5; }
