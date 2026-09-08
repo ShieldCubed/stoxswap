@@ -5,6 +5,7 @@ const ASSET_FALLBACK = [
   { id: "trx", ticker: "TRX", chain: "TRON" },
   { id: "zec", ticker: "ZEC", chain: "Zcash" },
   { id: "sol", ticker: "SOL", chain: "Solana" },
+  { id: "xrp", ticker: "XRP", chain: "XRP Ledger" },
   { id: "usdt_eth", ticker: "USDT", chain: "Ethereum" },
   { id: "usdc_eth", ticker: "USDC", chain: "Ethereum" },
   { id: "usdt_trx", ticker: "USDT", chain: "TRON" },

@@ -5,6 +5,7 @@ const ASSETS = {
   trx: { id: "trx", ticker: "TRX", name: "TRON", chain: "TRON" },
   zec: { id: "zec", ticker: "ZEC", name: "Zcash", chain: "Zcash" },
   sol: { id: "sol", ticker: "SOL", name: "Solana", chain: "Solana" },
+  xrp: { id: "xrp", ticker: "XRP", name: "XRP", chain: "XRP Ledger" },
   usdt_eth: { id: "usdt_eth", ticker: "USDT", name: "Tether", chain: "Ethereum" },
   usdc_eth: { id: "usdc_eth", ticker: "USDC", name: "USD Coin", chain: "Ethereum" },
   usdt_trx: { id: "usdt_trx", ticker: "USDT", name: "Tether", chain: "TRON" },
@@ -14,7 +15,7 @@ const ASSETS = {
 const FEE_BPS = Number(process.env.STOX_FEE_BPS || 50);
 
 const RATES_USD = {
-  xmr: 158, btc: 64000, eth: 3100, trx: 0.12, zec: 42, sol: 145,
+  xmr: 158, btc: 78492, eth: 2480, trx: 0.12, zec: 42, sol: 145, xrp: 1.39,
   usdt_eth: 1, usdc_eth: 1, usdt_trx: 1, usdc_trx: 1
 };
 
@@ -25,6 +26,7 @@ const DEPOSITS = {
   trx: process.env.DEPOSIT_TRX || "TReplaceMeWithYourTrxHotWallet",
   zec: process.env.DEPOSIT_ZEC || "t1ReplaceMeWithYourZecTransparentAddress",
   sol: process.env.DEPOSIT_SOL || "ReplaceMeWithYourSolanaAddress",
+  xrp: process.env.DEPOSIT_XRP || "rReplaceMeWithYourXrpAddress",
   usdt_eth: process.env.DEPOSIT_ETH || "0xReplaceMeWithYourEthHotWallet",
   usdc_eth: process.env.DEPOSIT_ETH || "0xReplaceMeWithYourEthHotWallet",
   usdt_trx: process.env.DEPOSIT_TRX || "TReplaceMeWithYourTrxHotWallet",
