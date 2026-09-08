@@ -12,7 +12,7 @@ const ASSETS = {
   usdc_trx: { id: "usdc_trx", ticker: "USDC", name: "USD Coin", chain: "TRON" }
 };
 
-const FEE_BPS = Number(process.env.STOX_FEE_BPS || 50);
+const FEE_BPS = Number(process.env.STOX_FEE_BPS || 125);
 
 const FALLBACK_USD = {
   xmr: 158, btc: 78492, eth: 2480, trx: 0.12, zec: 42, sol: 145, xrp: 1.39,
