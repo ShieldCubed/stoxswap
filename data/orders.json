@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "STX-MU667MAF3CI1",
+    "status": "awaiting_deposit",
+    "from": "usdt_trx",
+    "to": "xmr",
+    "send": 10000,
+    "receive": 19.06766864,
+    "feeBps": 125,
+    "feeUsd": 124.91,
+    "rate": 0.00190677,
+    "priceFromUsd": 0.999281,
+    "priceToUsd": 517.52,
+    "eta": "15-60 minutes after deposit confirms",
+    "destination": "8AJb8yWHrcUcMTiy3LGBW27Ww4r4yXBthC2TLJxT7ExKhAq4eworem8MZoExKbCYQUQ7NAG31mzQ6Dhj4bK75xmRHwnhRHL",
+    "refund": "TRBR81G3JZ1itP4yRgPS6okw2BQDvHuuPZ",
+    "depositAddress": "TCANH6rmQhkVPCcKAzjJ3GwmBa2oBcywRx",
+    "createdAt": "2026-09-17T23:38:30.423Z"
+  }
+]
