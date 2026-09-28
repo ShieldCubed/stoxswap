@@ -26,6 +26,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      gap: 16px;
     }
 
     .logo-area {
@@ -48,6 +49,14 @@
       color: #22c55e;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .nav-links a {
       color: #9ca3af;
       text-decoration: none;
@@ -56,7 +65,22 @@
       transition: color 0.2s;
     }
 
+    .nav-links a:first-child { margin-left: 0; }
+
     .nav-links a:hover { color: #22c55e; }
+
+    .xmr-badge {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: #052e16;
+      background: #f97316;
+      border: 1px solid #fb923c;
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
 
     .hero {
       padding: 90px 20px 70px;
@@ -256,6 +280,7 @@
       header { padding: 14px 20px; }
       .hero h1 { font-size: 2rem; }
       .nav-links { display: none; }
+      .xmr-badge { font-size: 11px; padding: 5px 10px; }
     }
   </style>
 </head>
@@ -266,10 +291,13 @@
       <img src="/logo.png" alt="StoxSwap" width="40" height="40">
       <span class="logo-text">StoxSwap</span>
     </a>
-    <nav class="nav-links">
-      <a href="/">Exchange</a>
-      <a href="/finance">Finance</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav-links">
+        <a href="/">Exchange</a>
+        <a href="/finance">Finance</a>
+      </nav>
+      <span class="xmr-badge">Monero(XMR) is ACCEPTED HERE.</span>
+    </div>
   </header>
 
   <section class="hero">
