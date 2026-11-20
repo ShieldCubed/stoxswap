@@ -1,5 +1,23 @@
 [
   {
+    "id": "STX-MWOV7B43MBSD",
+    "status": "awaiting_deposit",
+    "from": "xrp",
+    "to": "btc",
+    "send": 100,
+    "receive": 0.00153342,
+    "feeBps": 125,
+    "feeUsd": 1.2,
+    "rate": 0.00001533,
+    "priceFromUsd": 0.962816,
+    "priceToUsd": 62004,
+    "eta": "15-60 minutes after deposit confirms",
+    "destination": "bc1qlewf3txuqvqwp02ff7ch6dw75hnlwuj9sveu0y",
+    "refund": "rEvGGNnTJ5FS2iPNBk8VjiiAtJgYYV4s8s",
+    "depositAddress": "rwJYcpBAKGa79RMUNgeGhjTu6ZTwemTdAr",
+    "createdAt": "2026-11-20T10:57:22.179Z"
+  },
+  {
     "id": "STX-MWLOFDM5EDXX",
     "status": "awaiting_deposit",
     "from": "usdc_trx",
